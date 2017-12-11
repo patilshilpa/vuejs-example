@@ -8,11 +8,10 @@
     <br/>
 	 <li v-for="city in cities">{{ city.title }}
    <button @click ='report(city)' >show</button>
-
-   <li>humidity:{{ hum }}</li>
-   <li>temp_max:{{ temp_max }} </li>
-   <li>temp_min:{{ temp_min }} </li>
-   <button class="data" @click="remove(city)">delete</button>
+   <button  @click="remove(city)">delete</button>
+    <li>Humidity:{{ hum }}%</li>
+   <li>Temperature Max:{{ temp_max }}C</li>
+   <li>Temperature Min:{{ temp_min }}C</li>
     </li>
 	</div>
 </div>
