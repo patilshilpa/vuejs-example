@@ -6,6 +6,7 @@
 	   >
 	  <button type="" class="btn" @click="add">Addcity</button>
     <br/>
+
 	 <li v-for="city in cities">{{ city.title }}
    <button @click ='report(city)' >show</button>
    <button  @click="remove(city)">delete</button>
@@ -19,7 +20,7 @@
 
 <script type="">
  import axios from 'axios';
-
+ 
 export default {
    data() {
      return {
@@ -33,7 +34,7 @@ export default {
 
      };
    },
-
+ 
    methods: {
      add() {
        this.$store.dispatch('addCities', {
@@ -54,6 +55,9 @@ export default {
         self.hum = self.weatherData.data.main.humidity;
         self.temp_max = self.weatherData.data.main.temp_max;
         self.temp_min = self.weatherData.data.main.temp_min;
+      })
+      .catch((error) => {
+        alert('failed to load the server', error);
       });
      },
  
@@ -63,5 +67,8 @@ export default {
 <style type="text/css">
 	.data{
     padding: 10px;
+  }
+  li {
+     list-style-type: none;
   }
 </style>
